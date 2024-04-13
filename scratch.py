@@ -11,28 +11,31 @@ class grolApp(GridLayout):
         self.top_grid = GridLayout()
         self.cols=2
 
-        self.top_grid.cols=2
 
-
-        self.name=TextInput(multiline=True)
         self.add_widget(Label(text='русский:'))
-        self.top_grid.name=TextInput(multiline=False)
-        self.top_grid.add_widget(self.name)
-        self.top_grid.add_widget(Label(text='морзе:'))
-        self.top_grid.mami = TextInput(multiline=False)
-        self.top_grid.add_widget(self.mami)
 
-        self.submit.bind(on_press=self.submit)
-        self.add_widget(self.submit)
-        self.submin=Button
+        self.name = TextInput(multiline=False)
+        self.add_widget(self.name)
+
+        self.add_widget(Label(text='морзе:'))
+
+        self.mami = TextInput(multiline=False)
+        self.add_widget(self.mami)
+
+        self.sub_button = Button(text="Принять")
+        self.add_widget(self.sub_button)
+
+        self.sub_button.bind(on_press=self.sub)
+
+    def sub(self):
+        pass
 
 
-
-class App(App):
+class myApp(App):
     def build(self):
         return grolApp()
 
 
 
 if __name__ == '__main__':
-    App().run()
+    myApp().run()

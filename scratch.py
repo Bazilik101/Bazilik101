@@ -1,9 +1,8 @@
-import kivy
-from kivy.app import App
-from kivy.uix.label import Label
-from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
+from kivy.uix.widget import Widget
+
+
 
 class grolApp(GridLayout):
     def __init__(self,**kwargs):
@@ -12,23 +11,21 @@ class grolApp(GridLayout):
         self.cols=2
 
 
-        self.add_widget(Label(text='русский:'))
+        self.sub_button = Button(text="Принять",
 
-        self.name = TextInput(multiline=False)
-        self.add_widget(self.name)
-
-        self.add_widget(Label(text='морзе:'))
-
-        self.mami = TextInput(multiline=False)
-        self.add_widget(self.mami)
-
-        self.sub_button = Button(text="Принять")
+                                 font_size=30,
+                                 size_hint_y= None,
+                                 height=60,
+                                 width=90)
         self.add_widget(self.sub_button)
 
         self.sub_button.bind(on_press=self.sub)
 
-    def sub(self):
+
+    def sub(self,):
         pass
+
+
 
 
 class myApp(App):
